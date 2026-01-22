@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <title>Sons of the Forest – Interaktív térkép</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="map.css">
+  <link rel="icon" href="sons.png" type="image/png">
+</head>
+<body>
+  <header><h1>Sons of the Forest – Interaktív térkép</h1></header>
+
+<div class="layout">
+
+  <div class="map-wrapper">
+    <div id="map"></div>
+
+    <div class="controls">
+      <button onclick="toggleCaves()">Barlangok</button>
+      <button onclick="toggleBunkers()">Bunkerek</button>
+      <button onclick="toggleVIP()">VIP Bunker</button>
+      <button onclick="toggleGPSLocator()">GPS Locator</button>
+    </div>
+  </div>
+
+  <div id="info">
+    <h2>Kiválasztás</h2>
+    <p>Kattints egy ikonra</p>
+  </div>
+
+</div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="map.js"></script>
+
+<div id="nav-buttons">
+  <a href="index.html" class="back-btn">Vissza a főoldalra</a>
+</div>
+
+
+<footer>
+<p>Nem hivatalos rajongói oldal – Sons of the Forest © Endnight Games</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script defer src="./sons.js"></script>
+<link rel="stylesheet" href="./style.css">
+<link rel="icon" href="sons.png" type="image/png">
+<title>Sons of the Forest – Horror Lore</title>
+</head>
+
+<body>
+
+<header>
+  <h1>Sons of the Forest</h1>
+  <p>Egy sziget, ahol a halál nem a vég… csak az átalakulás kezdete.</p>
+</header>
+
+<section>
+<h2>Fő karakterek</h2>
+
+<div class="cards" id="main-characters">
+  <div class="card">
+    <h3>Puffton</h3>
+    <p>
+        Edward Puffton a Sons of the Forest milliárdos vállalkozója, aki a szigeten végzett kutatásai során mutálódott.
+        Karaktere a kapzsiság és hatalom tragikus példája, miközben családja és saját teste is deformálódott a mutáció miatt.
+    </p>
+    <img src="./Puffton.webp" alt="hiba">
+    <button>Kinyit</button>
+  </div>
+
+  <div class="card">
+    <h3>Virginia</h3>
+    <p>
+      Több karja és lába van, rendkívül gyors és agresszív. A Sons of the Forest ikonikus lénye, tragikus és halálos egyszerre.
+    </p>
+    <img src="./Virginia.webp" alt="hiba">
+    <button>Kinyit</button>
+  </div>
+
+  <div class="card">
+    <h3>Timmy</h3>
+    <p>
+      Egy fiatal túlélő, aki véletlenül kerül a szigetre. Bár emberi, gyorsan alkalmazkodik és túlélési készségeit a játék során fejleszti.
+    </p>
+    <img src="./LeBlanc.webp" alt="hiba">
+    <button>Kinyit</button>
+  </div>
+</div>
+
+<div id="nav-buttons" style="text-align:center; margin-top:30px;">
+  <button id="forest-btn">Tovább: Erdő lényei</button>
+  <button id="cave-btn">Tovább: Barlang lényei</button>
+</div>
+
+<div id="back-btn-container" style="text-align:center; margin-top:20px; display:none;">
+  <button id="back-btn">Vissza a főoldalra</button>
+</div>
+
+<div class="cards" id="forest-creatures" style="display:none; margin-top:30px;">
+  <div class="card">
+    <h3>Benszülöttek</h3>
+    <p>
+      A sziget eredeti lakói, primitív, de intelligens törzsekben élnek. Csapdákat állítanak, figyelnek, tanulnak, és könnyen bosszút állnak.
+    </p>
+    <img src="./Mudmans.png" alt="hiba">
+    <button>Kinyit</button>
+  </div>
+  <div class="card">
+    <h3>Kannibálok</h3>
+    <p>
+      Az erdő rémisztő lakói. A szigeten maradt emberek torzult túlélői, akik csoportosan vadásznak a betolakodókra.
+    </p>
+    <img src="./Bennszulott.webp" alt="hiba">
+    <button>Kinyit</button>
+  </div>
+</div>
+
+<div style="text-align:center; margin:30px 0;">
+  <a href="story.html">
+    <button id="map-btn">Story</button>
+  </a>
+</div>
+
+<div style="text-align:center; margin:30px 0;">
+  <a href="map.html">
+    <button id="map-btn">🗺️ Interaktív térkép</button>
+  </a>
+</div>
+
+<div class="cards" id="cave-creatures" style="display:none; margin-top:30px;">
+  <div class="card">
+    <h3>Creepy Virginia</h3>
+    <p>
+      Több karja és lába van, rendkívül gyors és agresszív. Sötét és ijesztő, a barlang mélyén leselkedik.
+    </p>
+    <img src="./CreepyVirginia.png" alt="hiba">
+    <button>Kinyit</button>
+  </div>
+
+  <div class="card">
+    <h3>Armsy</h3>
+    <p>
+      Karokból álló szörnyeteg, amely romboló erővel támad. Az emberi kísérletek kudarcának élő bizonyítéka.
+    </p>
+    <img src="./Armsy.webp" alt="hiba">
+    <button>Kinyit</button>
+  </div>
+
+  <div class="card">
+    <h3>Demon Boss</h3>
+    <p>
+      A barlang legnagyobb és legerősebb ellensége. Gigantikus, minden eddigi mutációt felvonultat, és halálos.
+    </p>
+    <img src="./DemonBoss.webp" alt="hiba">
+    <button>Kinyit</button>
+  </div>
+
+  <div class="card">
+    <h3>Fingers</h3>
+    <p>
+      Összenőtt ujjakból és csontokból álló lény, amely a barlang sötétjében vadászik. Hang alapján tájékozódik.
+    </p>
+    <img src="./Fingers.webp" alt="hiba">
+    <button>Kinyit</button>
+  </div>
+
+  <div class="card">
+    <h3>Twins</h3>
+    <p>
+      Két összenőtt mutáns test, akik szinkronban támadnak. Rendkívül kiszámíthatatlanok és gyorsak.
+    </p>
+    <img src="./TwinsThumb.png" alt="hiba">
+    <button>Kinyit</button>
+  </div>
+
+  <div class="card">
+    <h3>John2</h3>
+    <p>
+      Egy rejtélyes, emberi alakot mutató ellenség, aki a barlang mélyén él, és hirtelen támad.
+    </p>
+    <img src="./Jhon2.png" alt="hiba">
+    <button>Kinyit</button>
+  </div>
+
+    <div class="card">
+    <h3>Baby mutans</h3>
+    <p>
+      Egy torz, magzatszerű mutáns, ami gyors és kiszámíthatatlan. Gyakran barlangokban bukkan fel, hirtelen támad, és inkább megijeszt, mint komoly sebzést okoz – de csoportban veszélyes lehet.
+    </p>
+    <img src="./Baba_mutans.webp" alt="hiba">
+    <button>Kinyit</button>
+  </div>
+
+      <div class="card">
+    <h3>Holey</h3>
+    <p>
+      Egy nagyobb, groteszk testű mutáns, tele üregekkel és deformációkkal. Lassabb, viszont erős és kitartó, közelharcban komoly fenyegetést jelent, főleg szűk helyeken, például barlangokban.
+    </p>
+    <img src="./lyuk_13.webp" alt="hiba">
+    <button>Kinyit</button>
+  </div>
+</div>
+
+</section>
+
+<footer>
+<p>Nem hivatalos rajongói oldal – Sons of the Forest © Endnight Games</p>
+</footer>
+
+</body>
+</html>
