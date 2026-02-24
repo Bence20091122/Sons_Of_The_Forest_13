@@ -12,8 +12,22 @@
 <body>
 
 <header>
-  <h1>Sons of the Forest</h1>
-  <p>Egy sziget, ahol a halál nem a vég… csak az átalakulás kezdete.</p>
+  <section id="auth-section">
+    <h2>Bejelentkezés / Regisztráció</h2>
+    <input type="text" id="username" placeholder="Felhasználónév">
+    <input type="password" id="password" placeholder="Jelszó">
+    <button onclick="register()">Regisztráció</button>
+    <button onclick="login()">Bejelentkezés</button>
+    <p id="auth-message"></p>
+  </section>
+
+  <section id="user-panel" style="display:none;">
+    <h2>Felhasználói panel</h2>
+    <p>Solafitejaid: <span id="points">0</span></p>
+    <button onclick="logout()">Kijelentkezés</button>
+  </section>
+    <h1>Sons of the Forest</h1>
+    <p>Egy sziget, ahol a halál nem a vég… csak az átalakulás kezdete.</p>
 </header>
 
 <section>
@@ -163,6 +177,16 @@
   </div>
 </div>
 
+</section>
+
+<section id="quiz-section" style="display:none;">
+  <h2>Kvíz (15 kérdés – +5 Solafite / helyes válasz)</h2>
+  <div id="quiz-container"></div>
+</section>
+
+<section id="shop-section" style="display:none;">
+  <h2>Bolt</h2>
+  <div id="shop-items"></div>
 </section>
 
 <footer>
