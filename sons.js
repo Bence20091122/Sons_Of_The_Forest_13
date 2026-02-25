@@ -92,6 +92,7 @@ function login(){
   }
 
   currentUser = u;
+  localStorage.setItem("currentUser", u);
   authSection.style.display = "none";
   userPanel.style.display = "block";
   quizSection.style.display = "block";
@@ -104,6 +105,7 @@ function login(){
 
 function logout(){
   currentUser = null;
+  localStorage.removeItem("currentUser");
   location.reload();
 }
 
@@ -125,18 +127,18 @@ let currentQuestionIndex = 0;
 const questions = [
   {q:"Ki a milliárdos vállalkozó?", a:"Puffton"},
   {q:"Ki a mutáns nő?", a:"Virginia"},
-  {q:"Hol élnek a Demon Bossok?", a:"Barlang"},
-  {q:"Mi a játék neve?", a:"Sons"},
-  {q:"Hány karja lehet Virginiának?", a:"Több"},
-  {q:"Kik élnek az erdőben?", a:"Kannibálok"},
-  {q:"Mi a cél?", a:"Túlélés"},
+  {q:"Hány fegyvert tudsz adni Virginiának?", a:"2"},
+  {q:"Hogy hívják a sérült társad?", a:"Kelvin"},
+  {q:"Hány karja van Virginiának?", a:"3"},
+  {q:"Hány állatfajta található a játékban?", a:"12"},
+  {q:"Hogy hívják az ősi ércet?", a:"Solafite"},
   {q:"Van térkép?", a:"Igen"},
   {q:"Van story?", a:"Igen"},
   {q:"Ki a fő ellenfél?", a:"Demon"},
   {q:"Hol zajlik?", a:"Sziget"},
   {q:"Milyen műfaj?", a:"Horror"},
-  {q:"Fejleszthető a karakter?", a:"Igen"},
-  {q:"Van multiplayer?", a:"Igen"},
+  {q:"Mi a játszható karakter neve?", a:"Jack Holt"},
+  {q:"Hány fajta armor létezik?", a:"6", a:"7"},
   {q:"Ki készítette?", a:"Endnight"}
 ];
 
@@ -209,8 +211,23 @@ function buyItem(i){
 }
 
 function checkGold(){
-  const user = users[currentUser];
-  if(user.purchases.length === shopItems.length){
+  if(currentUser){
     document.body.classList.add("gold-theme");
+  } else {
+    document.body.classList.remove("gold-theme");
   }
 }
+
+window.addEventListener('DOMContentLoaded', () => {
+  const savedUser = localStorage.getItem("currentUser");
+  if(savedUser && users[savedUser]){
+    currentUser = savedUser;
+    authSection.style.display = "none";
+    userPanel.style.display = "block";
+    quizSection.style.display = "block";
+    shopSection.style.display = "block";
+    updateUI();
+    currentQuestionIndex = 0;
+    showQuestion();
+  }
+});

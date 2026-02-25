@@ -34,5 +34,14 @@
 <p>Nem hivatalos rajongói oldal – Sons of the Forest © Endnight Games   </p>
 </footer>
 
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+  const savedUser = localStorage.getItem("currentUser");
+  if(savedUser){
+    document.body.classList.add("gold-theme");
+  }
+});
+</script>
+
 </body>
 </html>

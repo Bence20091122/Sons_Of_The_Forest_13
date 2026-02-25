@@ -209,3 +209,37 @@ function toggleGPSLocator() {
     map.addLayer(gpsLocatorLayer);
   }
 }
+
+function checkGold(){
+  const user = users[currentUser];
+  if(user.purchases.length === shopItems.length){
+    document.body.classList.add("gold-theme");
+  }
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  const savedUser = localStorage.getItem("currentUser");
+  if(savedUser){
+    document.body.classList.add("gold-theme");
+  }
+});
+
+function login(){
+  const u = document.getElementById("username").value;
+  const p = document.getElementById("password").value;
+
+  if(!users[u] || users[u].password !== p){
+    authMessage.textContent = "Hibás adatok!";
+    return;
+  }
+
+  currentUser = u;
+  authSection.style.display = "none";
+  userPanel.style.display = "block";
+  quizSection.style.display = "block";
+  shopSection.style.display = "block";
+
+  updateUI();
+  currentQuestionIndex = 0;
+  showQuestion();
+}

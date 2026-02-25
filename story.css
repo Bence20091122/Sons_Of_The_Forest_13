@@ -294,3 +294,50 @@ footer {
 .back-btn:hover {
   background-color: #444;
 }
+
+.gold-theme {
+  background: linear-gradient(180deg, #3a2d00, #000);
+  color: gold;
+}
+
+.gold-theme header h1,
+.gold-theme h2,
+.gold-theme h3,
+.gold-theme p {
+  color: gold;
+}
+
+.gold-theme button {
+  background: gold;
+  color: black;
+  border: 2px solid darkgoldenrod;
+}
+
+.gold-theme input {
+  background: #fff8dc;
+  color: black;
+  border: 1px solid gold;
+}
+
+.gold-theme #quiz-container,
+.gold-theme #shop-items,
+.gold-theme #auth-section,
+.gold-theme #user-panel {
+  border: 2px solid gold;
+  box-shadow: 0 0 20px gold;
+}
+
+.gold-theme a button,
+.gold-theme #map-btn,
+.gold-theme #story-btn {
+  background: gold;
+  color: black;
+  border: 2px solid darkgoldenrod;
+}
+
+.gold-theme a button:hover,
+.gold-theme #map-btn:hover,
+.gold-theme #story-btn:hover {
+  background: darkgoldenrod;
+  color: gold;
+}
