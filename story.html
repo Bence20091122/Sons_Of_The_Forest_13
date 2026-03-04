@@ -36,9 +36,12 @@
 
 <script>
 window.addEventListener('DOMContentLoaded', () => {
-  const savedUser = localStorage.getItem("currentUser");
-  if(savedUser){
-    document.body.classList.add("gold-theme");
+  const currentUser = localStorage.getItem("currentUser");
+  if(currentUser) {
+    const users = JSON.parse(localStorage.getItem("users")) || {};
+    if(users[currentUser] && users[currentUser].purchases && users[currentUser].purchases.length > 0) {
+      document.body.classList.add("gold-theme");
+    }
   }
 });
 </script>

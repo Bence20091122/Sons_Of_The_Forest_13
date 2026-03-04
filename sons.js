@@ -211,7 +211,7 @@ function buyItem(i){
 }
 
 function checkGold(){
-  if(currentUser){
+  if(currentUser && users[currentUser].purchases.length > 0){
     document.body.classList.add("gold-theme");
   } else {
     document.body.classList.remove("gold-theme");
