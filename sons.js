@@ -4,6 +4,32 @@ const cave = document.getElementById('cave-creatures');
 const navButtons = document.getElementById('nav-buttons');
 const backBtnContainer = document.getElementById('back-btn-container');
 
+// Animated Notification System
+function showNotification(message, type = 'info') {
+  const notification = document.createElement('div');
+  notification.classList.add('notification', `notification-${type}`);
+  notification.textContent = message;
+  
+  // Determine where to append the notification
+  const quizNotificationContainer = document.getElementById('quiz-notification-container');
+  if(quizNotificationContainer && quizNotificationContainer.offsetParent !== null) {
+    // Quiz section is visible, append to quiz container
+    quizNotificationContainer.appendChild(notification);
+  } else {
+    // Append to body for global notifications
+    document.body.appendChild(notification);
+  }
+  
+  // Trigger animation
+  setTimeout(() => notification.classList.add('show'), 10);
+  
+  // Remove after 3 seconds
+  setTimeout(() => {
+    notification.classList.remove('show');
+    setTimeout(() => notification.remove(), 100);
+  }, 1000);
+}
+
 const authSection = document.getElementById("auth-section");
 const userPanel = document.getElementById("user-panel");
 const authMessage = document.getElementById("auth-message");
@@ -68,7 +94,7 @@ function register(){
   const p = document.getElementById("password").value;
 
   if(users[u]){
-    authMessage.textContent = "Ez a név már létezik!";
+    showNotification("Ez a név már létezik!", "error");
     return;
   }
 
@@ -79,7 +105,7 @@ function register(){
   };
 
   saveUsers();
-  authMessage.textContent = "Sikeres regisztráció!";
+  showNotification("Sikeres regisztráció!", "success");
 }
 
 function login(){
@@ -87,7 +113,7 @@ function login(){
   const p = document.getElementById("password").value;
 
   if(!users[u] || users[u].password !== p){
-    authMessage.textContent = "Hibás adatok!";
+    showNotification("Hibás adatok!", "error");
     return;
   }
 
@@ -163,9 +189,9 @@ function submitAnswer(){
 
   if(input.toLowerCase().includes(correct.toLowerCase())){
     addPoints();
-    alert("Helyes! +5 Solafite");
+    showNotification("Helyes! +5 Solafite", "success");
   } else {
-    alert("Rossz válasz!");
+    showNotification("Rossz válasz!", "error");
   }
 
   currentQuestionIndex++;
@@ -194,12 +220,12 @@ function buyItem(i){
   const user = users[currentUser];
 
   if(user.purchases.includes(item.name)){
-    alert("Már megvetted!");
+    showNotification("Már megvetted!", "error");
     return;
   }
 
   if(user.points < item.price){
-    alert("Nincs elég Solafitod!");
+    showNotification("Nincs elég Solafitod!", "error");
     return;
   }
 
@@ -207,11 +233,11 @@ function buyItem(i){
   user.purchases.push(item.name);
   saveUsers();
   updateUI();
-  alert("Sikeres vásárlás!");
+  showNotification("Sikeres vásárlás!", "success");
 }
 
 function checkGold(){
-  if(currentUser && users[currentUser].purchases.length > 0){
+  if(currentUser && users[currentUser].purchases.length === shopItems.length){
     document.body.classList.add("gold-theme");
   } else {
     document.body.classList.remove("gold-theme");
