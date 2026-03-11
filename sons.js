@@ -4,26 +4,25 @@ const cave = document.getElementById('cave-creatures');
 const navButtons = document.getElementById('nav-buttons');
 const backBtnContainer = document.getElementById('back-btn-container');
 
-// Animated Notification System
 function showNotification(message, type = 'info') {
   const notification = document.createElement('div');
   notification.classList.add('notification', `notification-${type}`);
   notification.textContent = message;
   
-  // Determine where to append the notification
+
   const quizNotificationContainer = document.getElementById('quiz-notification-container');
   if(quizNotificationContainer && quizNotificationContainer.offsetParent !== null) {
-    // Quiz section is visible, append to quiz container
+
     quizNotificationContainer.appendChild(notification);
   } else {
-    // Append to body for global notifications
+
     document.body.appendChild(notification);
   }
   
-  // Trigger animation
+
   setTimeout(() => notification.classList.add('show'), 10);
   
-  // Remove after 3 seconds
+
   setTimeout(() => {
     notification.classList.remove('show');
     setTimeout(() => notification.remove(), 100);
@@ -199,9 +198,12 @@ function submitAnswer(){
 }
 
 const shopItems = [
-  {name:"Arany Kard", price:20},
-  {name:"Mutáns Páncél", price:30},
-  {name:"Titkos Relikvia", price:40}
+  {name:"Arany Kard", price:20, Image:"gold_katana.jfif"},
+  {name:"Mutáns Páncél", price:30, Image:"creepy.jpg"},
+  {name:"Artifact", price:40, Image:"artifact.jfif"},
+  {name:"Sokkoló", price:25, Image:"taser.jfif"},
+  {name:"Búvárfelszerelés", price:15, Image:"scubagear.webp"},
+  {name:"Ősi Páncél", price:35, Image:"Golden_Armor.webp"},
 ];
 
 const shopContainer = document.getElementById("shop-items");
@@ -210,7 +212,9 @@ shopItems.forEach((item,i)=>{
   const div = document.createElement("div");
   div.innerHTML = `
     <p>${item.name} - ${item.price} Solafite</p>
+    <img src="${item.Image}" alt="${item.name}" style="width:100px;margin-top:10px;">
     <button onclick="buyItem(${i})">Megveszem</button>
+    
   `;
   shopContainer.appendChild(div);
 });
