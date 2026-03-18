@@ -199,9 +199,9 @@ function submitAnswer(){
 
 const shopItems = [
   {name:"Arany Kard", price:20, Image:"Solar_katana.webp"},
-  {name:"Mutáns Páncél", price:30, Image:"creepy.jpg"},
-  {name:"Artifact", price:40, Image:"artifact.jfif"},
-  {name:"Sokkoló", price:25, Image:"taser.jfif"},
+  {name:"Mutáns Páncél", price:30, Image:"CreepyArmorFullFarket.webp"},
+  {name:"Artifact", price:40, Image:"Artifact_Piece_G_Icon.webp"},
+  {name:"Sokkoló", price:25, Image:"Stzuntgun.webp"},
   {name:"Búvárfelszerelés", price:15, Image:"scubagear.webp"},
   {name:"Ősi Páncél", price:35, Image:"Golden_Armor.webp"},
 ];
