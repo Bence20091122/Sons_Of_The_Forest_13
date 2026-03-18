@@ -169,7 +169,7 @@ const questions = [
 
 function showQuestion(){
   if(currentQuestionIndex >= questions.length){
-    quizContainer.innerHTML = "<h3>Vége a kvíznek! 🎉</h3>";
+    quizContainer.innerHTML = "<h3>Vége a kvíznek!</h3>";
     return;
   }
 
@@ -198,7 +198,7 @@ function submitAnswer(){
 }
 
 const shopItems = [
-  {name:"Arany Kard", price:20, Image:"gold_katana.jfif"},
+  {name:"Arany Kard", price:20, Image:"Solar_katana.webp"},
   {name:"Mutáns Páncél", price:30, Image:"creepy.jpg"},
   {name:"Artifact", price:40, Image:"artifact.jfif"},
   {name:"Sokkoló", price:25, Image:"taser.jfif"},
