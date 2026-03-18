@@ -169,7 +169,7 @@ const questions = [
 
 function showQuestion(){
   if(currentQuestionIndex >= questions.length){
-    quizContainer.innerHTML = "<h3>Vége a kvíznek!</h3>";
+    quizContainer.innerHTML = "<h3>Vége a kvíznek!</h3><button onclick='resetQuiz()'>Újra kvíz</button>";
     return;
   }
 
@@ -194,6 +194,11 @@ function submitAnswer(){
   }
 
   currentQuestionIndex++;
+  showQuestion();
+}
+
+function resetQuiz(){
+  currentQuestionIndex = 0;
   showQuestion();
 }
 
