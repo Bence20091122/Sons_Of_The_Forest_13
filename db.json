@@ -1,52 +1,43 @@
 {
   "users": [
     {
-      "id": 1,
-      "username": "player1",
-      "password": "pass123",
+      "username": "asd",
+      "password": "asd",
+      "points": 360,
+      "purchases": [
+        "Arany Kard",
+        "Mutáns Páncél",
+        "Artifact",
+        "Sokkoló",
+        "Búvárfelszerelés",
+        "Ősi Páncél"
+      ],
+      "quizIndex": 8,
+      "id": "YoJHHy4EJZ4"
+    },
+    {
+      "username": "qwe",
+      "password": "qwe",
       "points": 0,
-      "level": 1
-    }
-  ],
-  "characters": [
-    {
-      "id": 1,
-      "name": "Puffton",
-      "description": "Edward Puffton a Sons of the Forest milliárdos vállalkozója, aki a szigeten végzett kutatásai során mutálódott. Karaktere a kapzsiság és hatalom tragikus példája, miközben családja és saját teste is deformálódott a mutáció miatt.",
-      "image": "./Puffton.webp",
-      "category": "main"
-    }
-  ],
-  "creatures": [
-    {
-      "id": 1,
-      "name": "Cannibal",
-      "description": "Az erdő sötét titkai között rejtőznek az őslakók.",
-      "type": "forest",
-      "danger": "high"
-    }
-  ],
-  "items": [
-    {
-      "id": 1,
-      "name": "Gold Katana",
-      "description": "A legendás aranyozott katana",
-      "image": "./gold_katana.jfif",
-      "price": 500
+      "purchases": [],
+      "quizIndex": 0,
+      "id": "nsvhewoMGuE"
     },
     {
-      "id": 2,
-      "name": "Taser",
-      "description": "Elektromos önvédelmi eszköz",
-      "image": "./taser.jfif",
-      "price": 300
-    },
-    {
-      "id": 3,
-      "name": "Ancient Artifact",
-      "description": "Ősi artefaktum a szigeten talált",
-      "image": "./artifact.jfif",
-      "price": 1000
+      "username": "boying1819",
+      "password": "jelszo",
+      "points": 5390,
+      "purchases": [
+        "Arany Kard",
+        "Mutáns Páncél",
+        "Artifact",
+        "Sokkoló",
+        "Búvárfelszerelés",
+        "Ősi Páncél"
+      ],
+      "quizIndex": 9,
+      "id": "DVPQcFiU4r0"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

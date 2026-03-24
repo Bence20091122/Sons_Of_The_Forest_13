@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 <script defer src="./sons.js"></script>
+
 <link rel="stylesheet" href="./style.css">
 <link rel="icon" href="sons.png" type="image/png">
 <title>Sons of the Forest – Horror</title>
@@ -12,29 +14,39 @@
 <body>
 
 <header class="hero">
-  <video autoplay muted loop src="Sons of the Forest - Official Gameplay Trailer.mp4" class="bg-video" ></video>
+  <video autoplay muted loop src="Sons of the Forest - Official Gameplay Trailer.mp4" class="bg-video"></video>
   <div class="overlay"></div>
-  <div>
-  <section id="auth-section">
-    <h2>Bejelentkezés / Regisztráció</h2>
-    <input type="text" id="username" placeholder="Felhasználónév">
-    <input type="password" id="password" placeholder="Jelszó">
-    <button onclick="register()">Regisztráció</button>
-    <button onclick="login()">Bejelentkezés</button>
-    <p id="auth-message"></p>
-  </section>
 
-  <section id="user-panel" style="display:none;">
-    <h2>Felhasználói panel</h2>
-    <p style="text-align: center; display: flex; justify-content: center; align-items: center; gap: 8px;">
-      <img src="./Solafite.png" alt="Solafite" style="width: 24px; height: 24px;">
-      <span>Solafitejaid: <span id="points" style="font-weight: bold;">0</span></span>
-    </p>
-    <button onclick="logout()">Kijelentkezés</button>
-  </section>
+  <div>
+    <section id="auth-section">
+      <h2>Bejelentkezés / Regisztráció</h2>
+
+      <form onsubmit="register(event)">
+        <input type="text" id="username" placeholder="Felhasználónév" required>
+        <input type="password" id="password" placeholder="Jelszó" required>
+        <button type="button" onclick="register()">Regisztráció</button>
+        <button type="button" onclick="login()">Bejelentkezés</button>
+      </form>
+
+      <p id="auth-message"></p>
+    </section>
+
+    <section id="user-panel" style="display:none;">
+      <h2>Felhasználói panel</h2>
+
+      <p>Üdv! <span id="username-display"></span></p>
+
+      <p style="text-align: center; display: flex; justify-content: center; align-items: center; gap: 8px;">
+        <img src="./Solafite.png" alt="Solafite" style="width: 24px; height: 24px;">
+        <span>Solafitejaid: <span id="points" style="font-weight: bold;">0</span></span>
+      </p>
+
+      <button onclick="logout()">Kijelentkezés</button>
+    </section>
+
     <h1>Sons of the Forest</h1>
     <p>Egy sziget, ahol a halál nem a vég… csak az átalakulás kezdete.</p>
-    </div>
+  </div>
 </header>
 
 <section>
@@ -43,57 +55,45 @@
 <div class="cards" id="main-characters">
   <div class="card">
     <h3>Puffton</h3>
-    <p>
-        Edward Puffton a Sons of the Forest milliárdos vállalkozója, aki a szigeten végzett kutatásai során mutálódott.
-        Karaktere a kapzsiság és hatalom tragikus példája, miközben családja és saját teste is deformálódott a mutáció miatt.
-    </p>
-    <img src="./Puffton.webp" alt="hiba">
+    <p>Edward Puffton a milliárdos vállalkozó, aki mutálódott.</p>
+    <img src="./Puffton.webp">
     <button>Kinyit</button>
   </div>
 
   <div class="card">
     <h3>Virginia</h3>
-    <p>
-      Több karja és lába van, rendkívül gyors és agresszív. A Sons of the Forest ikonikus lénye, tragikus és halálos egyszerre.
-    </p>
-    <img src="./Virginia.webp" alt="hiba">
+    <p>Több karja van, gyors és halálos.</p>
+    <img src="./Virginia.webp">
     <button>Kinyit</button>
   </div>
 
   <div class="card">
     <h3>Timmy</h3>
-    <p>
-      Egy fiatal túlélő, aki véletlenül kerül a szigetre. Bár emberi, gyorsan alkalmazkodik és túlélési készségeit a játék során fejleszti.
-    </p>
-    <img src="./LeBlanc.webp" alt="hiba">
+    <p>Egy túlélő, aki alkalmazkodik.</p>
+    <img src="./LeBlanc.webp">
     <button>Kinyit</button>
   </div>
 </div>
 
 <div id="nav-buttons" style="text-align:center; margin-top:30px;">
-  <button id="forest-btn">Tovább: Erdő lényei</button>
-  <button id="cave-btn">Tovább: Barlang lényei</button>
+  <button id="forest-btn">Erdő lényei</button>
+  <button id="cave-btn">Barlang lényei</button>
 </div>
 
 <div id="back-btn-container" style="text-align:center; margin-top:20px; display:none;">
-  <button id="back-btn">Vissza a főoldalra</button>
+  <button id="back-btn">Vissza</button>
 </div>
 
-<div class="cards" id="forest-creatures" style="display:none; margin-top:30px;">
+<div class="cards" id="forest-creatures" style="display:none;">
   <div class="card">
     <h3>Benszülöttek</h3>
-    <p>
-      A sziget eredeti lakói, primitív, de intelligens törzsekben élnek. Csapdákat állítanak, figyelnek, tanulnak, és könnyen bosszút állnak.
-    </p>
-    <img src="./Mudmans.png" alt="hiba">
+    <img src="./Mudmans.png">
     <button>Kinyit</button>
   </div>
+
   <div class="card">
     <h3>Kannibálok</h3>
-    <p>
-      Az erdő rémisztő lakói. A szigeten maradt emberek torzult túlélői, akik csoportosan vadásznak a betolakodókra.
-    </p>
-    <img src="./Bennszulott.webp" alt="hiba">
+    <img src="./Bennszulott.webp">
     <button>Kinyit</button>
   </div>
 </div>
@@ -187,8 +187,7 @@
 </section>
 
 <section id="quiz-section" style="display:none;">
-  <h2>Kvíz (15 kérdés – +5 Solafite / helyes válasz)</h2>
-  <div id="quiz-notification-container"></div>
+  <h2>Kvíz</h2>
   <div id="quiz-container"></div>
 </section>
 
@@ -198,7 +197,7 @@
 </section>
 
 <footer>
-<p>Nem hivatalos rajongói oldal – Sons of the Forest © Endnight Games</p>
+<p>Nem hivatalos rajongói oldal</p>
 </footer>
 
 </body>
