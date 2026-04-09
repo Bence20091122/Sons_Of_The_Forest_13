@@ -34,26 +34,33 @@ function showNotification(message, type='info'){
         setTimeout(()=>notification.remove(), 300);
     }, 2000);
 }
-//---Kinyitás és illetve bezárás ha működik
-document.querySelectorAll('.card').forEach(card => {
-  const btn = card.querySelector('button');
-  btn.addEventListener('click', () => {
-    clickSound();
-    card.classList.toggle('active');
-    btn.textContent = card.classList.contains('active') ? 'Bezár' : 'Kinyit';
-  });
-});
 
-// Modal close functionality
-const modal = document.getElementById('image-modal');
-const closeBtn = document.querySelector('.close');
-closeBtn.addEventListener('click', () => {
-  modal.style.display = 'none';
-});
-modal.addEventListener('click', (e) => {
-  if (e.target === modal) {
-    modal.style.display = 'none';
-  }
+function updateUI(){
+    if(currentUser && pointsDisplay) pointsDisplay.textContent = currentUser.points;
+    checkGold();
+}
+
+function showSection(section) {
+  main.style.display = 'none';
+  forest.style.display = 'none';
+  cave.style.display = 'none';
+  
+  if(section === 'forest') forest.style.display = 'grid';
+  if(section === 'cave') cave.style.display = 'grid';
+  
+  navButtons.style.display = 'none';
+  backBtnContainer.style.display = 'block';
+}
+
+document.getElementById('forest-btn').addEventListener('click', () => showSection('forest'));
+document.getElementById('cave-btn').addEventListener('click', () => showSection('cave'));
+
+document.getElementById('back-btn').addEventListener('click', () => {
+  main.style.display = 'grid';
+  forest.style.display = 'none';
+  cave.style.display = 'none';
+  navButtons.style.display = 'block';
+  backBtnContainer.style.display = 'none';
 });
 
 function clickSound() {
@@ -68,6 +75,15 @@ function clickSound() {
   osc.start();
   osc.stop(ctx.currentTime + 0.08);
 }
+
+document.querySelectorAll('.card').forEach(card => {
+  const btn = card.querySelector('button');
+  btn.addEventListener('click', () => {
+    clickSound();
+    card.classList.toggle('active');
+    btn.textContent = card.classList.contains('active') ? 'Bezár' : 'Kinyit';
+  });
+});
 
 // --- AUTENTIKÁCIÓ (JAVÍTVA) ---
 

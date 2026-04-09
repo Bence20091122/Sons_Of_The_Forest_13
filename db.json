@@ -37,6 +37,21 @@
       ],
       "quizIndex": 9,
       "id": "DVPQcFiU4r0"
+    },
+    {
+      "username": "qwewqe",
+      "password": "qwqweqwe",
+      "points": 25,
+      "purchases": [
+        "Arany Kard",
+        "Mutáns Páncél",
+        "Artifact",
+        "Sokkoló",
+        "Búvárfelszerelés",
+        "Ősi Páncél"
+      ],
+      "quizIndex": 4,
+      "id": "BOZbxDOJ9xU"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
