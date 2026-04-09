@@ -34,10 +34,39 @@ function showNotification(message, type='info'){
         setTimeout(()=>notification.remove(), 300);
     }, 2000);
 }
+//---Kinyitás és illetve bezárás ha működik
+document.querySelectorAll('.card').forEach(card => {
+  const btn = card.querySelector('button');
+  btn.addEventListener('click', () => {
+    clickSound();
+    card.classList.toggle('active');
+    btn.textContent = card.classList.contains('active') ? 'Bezár' : 'Kinyit';
+  });
+});
 
-function updateUI(){
-    if(currentUser && pointsDisplay) pointsDisplay.textContent = currentUser.points;
-    checkGold();
+// Modal close functionality
+const modal = document.getElementById('image-modal');
+const closeBtn = document.querySelector('.close');
+closeBtn.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    modal.style.display = 'none';
+  }
+});
+
+function clickSound() {
+  const ctx = new (window.AudioContext || window.webkitAudioContext)();
+  const osc = ctx.createOscillator();
+  const gain = ctx.createGain();
+  osc.type = 'square';
+  osc.frequency.value = 180;
+  gain.gain.value = 0.05;
+  osc.connect(gain);
+  gain.connect(ctx.destination);
+  osc.start();
+  osc.stop(ctx.currentTime + 0.08);
 }
 
 // --- AUTENTIKÁCIÓ (JAVÍTVA) ---
