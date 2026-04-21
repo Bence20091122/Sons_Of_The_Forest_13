@@ -3,7 +3,7 @@
     {
       "username": "asd",
       "password": "asd",
-      "points": 360,
+      "points": 365,
       "purchases": [
         "Arany Kard",
         "Mutáns Páncél",
@@ -12,7 +12,7 @@
         "Búvárfelszerelés",
         "Ősi Páncél"
       ],
-      "quizIndex": 8,
+      "quizIndex": 9,
       "id": "YoJHHy4EJZ4"
     },
     {
@@ -52,6 +52,21 @@
       ],
       "quizIndex": 4,
       "id": "BOZbxDOJ9xU"
+    },
+    {
+      "username": "lélghklj",
+      "password": "éálléghj",
+      "points": 9835,
+      "purchases": [
+        "Arany Kard",
+        "Mutáns Páncél",
+        "Artifact",
+        "Sokkoló",
+        "Búvárfelszerelés",
+        "Ősi Páncél"
+      ],
+      "quizIndex": 0,
+      "id": "FOR4u3rZ7cY"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
